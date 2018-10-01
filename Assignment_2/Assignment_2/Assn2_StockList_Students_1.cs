@@ -231,22 +231,51 @@ namespace Assignment_2
         {
             // write your implementation here          
 
-            List<StockList> stockListsSorted1 = new List<StockList>();
-            stockListsSorted1.Add(this);
 
-            List<StockList> sortedList =  stockListsSorted1.OrderByDescending(s => s.head.StockHolding.Holdings).ToList();
+            bool restartTest = true; //Test for stop the process
+            StockNode currentNode = head; //inherit data       
+            decimal nextNode;
 
-            sortedList = sortedList.OrderByDescending(s => s.head.StockHolding).ToList();
+            while (restartTest)
+            {
+                restartTest = false;
+                currentNode = head;
+                while (!restartTest && currentNode.Next != null)
 
-            //Testing to see if using a locally declared list would help resolve
-            var stockListsSorted2 = stockListsSorted1.OrderBy(s => s.head).ToList();
+                {
+                    if (currentNode.Next.StockHolding.Holdings >= currentNode.StockHolding.Holdings) //is sorted
+                    {
+                        currentNode = currentNode.Next;
+                    }
+                    else
+                    {
+                        //swap the data
+                        nextNode = currentNode.StockHolding.Holdings;
+                        currentNode.StockHolding.Holdings = currentNode.Next.StockHolding.Holdings;
+                        currentNode.Next.StockHolding.Holdings = nextNode;
 
-            // Testing to see if sorting an array would work better
-            StockList[] arrayTest1 = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
+                        restartTest = true;
+                    }
+                }
+            }
+    
+                    /*
+                List<StockList> stockListsSorted1 = new List<StockList>();
+                stockListsSorted1.Add(this);
 
-           
+                List<StockList> sortedList =  stockListsSorted1.OrderByDescending(s => s.head.StockHolding.Holdings).ToList();
 
-        
+                sortedList = sortedList.OrderByDescending(s => s.head.StockHolding).ToList();
+
+                //Testing to see if using a locally declared list would help resolve
+                var stockListsSorted2 = stockListsSorted1.OrderBy(s => s.head).ToList();
+
+                // Testing to see if sorting an array would work better
+                StockList[] arrayTest1 = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
+                */
+
+
+
 
         }
 

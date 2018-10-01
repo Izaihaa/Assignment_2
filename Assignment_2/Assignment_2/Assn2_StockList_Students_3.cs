@@ -38,8 +38,14 @@ namespace Assignment_2
     //return type  : NA
     public void Print()
     {
-      // write your implementation here
+            // write your implementation here
+            StockNode current = head;
+            while (current != null)
+            {
+                Console.WriteLine(current.StockHolding);
+                current = current.Next;
+            }
 
+        }
     }
-  }
 }
