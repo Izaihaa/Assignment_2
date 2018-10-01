@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Assignment_2
 {
@@ -228,18 +229,20 @@ namespace Assignment_2
     //return type  : NA
     public void SortByValue()
     {
-      // write your implementation here
+       // write your implementation here
+
+
 
     }
 
-    //param        : NA
-    //summary      : Sort the list alphabatically
-    //return       : NA
-    //return type  : NA
-    public void SortByName()
-    {
-      // write your implementation here
+        //param        : NA
+        //summary      : Sort the list alphabatically
+        //return       : NA
+        //return type  : NA
+        public void SortByName()
+        {
+            // write your implementation here
 
-    }
+        }
   }
 }

@@ -1,4 +1,6 @@
-﻿namespace Assignment_2
+﻿using System;
+
+namespace Assignment_2
 {
   public class Stock
   {
@@ -30,5 +32,6 @@
     {
       return Symbol + ", " + Name + ", " + Holdings + ", " + CurrentPrice;
     }
-  }
+
+    }
 }
