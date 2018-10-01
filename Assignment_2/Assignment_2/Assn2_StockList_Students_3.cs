@@ -13,8 +13,10 @@ namespace Assignment_2
     public decimal Value()
     {
       decimal value = 0.0m;
+            Stock stock = new Stock();
 
-      // write your implementation here
+            // write your implementation here
+            value = stock.Holdings * stock.CurrentPrice;
 
       return value;
     }
@@ -27,9 +29,23 @@ namespace Assignment_2
     {
       int similarityIndex = 0;
 
-      // write your implementation here
+            // write your implementation here
 
-      return similarityIndex;
+            StockList stocklist = new StockList();
+
+
+
+            while (stocklist.head != null && listToCompare.head != null && stocklist.head.StockHolding == listToCompare.head.StockHolding)
+            {
+                stocklist.head = stocklist.head.Next;
+                listToCompare.head = listToCompare.head.Next;
+                similarityIndex++;
+            }
+
+            
+
+
+            return similarityIndex;
     }
 
     //param        : NA
@@ -38,8 +54,18 @@ namespace Assignment_2
     //return type  : NA
     public void Print()
     {
-      // write your implementation here
+            // write your implementation here
 
-    }
+
+            StockNode current = head;
+            while (current != null)
+            {
+                Console.WriteLine(current.StockHolding);
+                current = current.Next;
+            }
+
+            
+
+        }
   }
 }

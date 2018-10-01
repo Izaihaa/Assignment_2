@@ -230,9 +230,7 @@ namespace Assignment_2
     public void SortByValue()
     {
        // write your implementation here
-       List<Stock> stockListsSorted = client1.StockList
-                                         .OrderByDescending(s => s.Holding)
-                                         .ToList();
+
 
 
     }
