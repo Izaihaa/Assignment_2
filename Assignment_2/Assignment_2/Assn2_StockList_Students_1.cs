@@ -237,24 +237,28 @@ namespace Assignment_2
             StockNode currentNode = head; //inherit data       
 
 
-            while (restartTest)
+            while (restartTest == true )
             {
                 restartTest = false;
-                //currentNode = head;
+               
                 while (!restartTest && currentNode.Next != null)
 
                 {
-                    if (currentNode.Next.StockHolding.Holdings <= currentNode.StockHolding.Holdings) //is sorted
+                    if (currentNode.Next.StockHolding.Holdings >= currentNode.StockHolding.Holdings) //is sorted
                     {
+                        //Swap(currentNode.StockHolding);
                         currentNode = currentNode.Next;
-                        //return;
+                       // return;
                     }
                     else
                     {
-                        //swap the data
+                        //Call the Swap Method and Pass in the node
+                        //currentNode = currentNode.Next;
                         Swap(currentNode.StockHolding);
                         //return;
                     }
+
+                   
                 }
             }
 
