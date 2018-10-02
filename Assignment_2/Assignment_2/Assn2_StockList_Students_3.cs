@@ -14,9 +14,10 @@ namespace Assignment_2
     {
       decimal value = 0.0m;
 
-      // write your implementation here
-
-      return value;
+            // write your implementation here
+            Stock stock = new Stock();
+            value = stock.Holdings * stock.CurrentPrice;
+            return value;
     }
 
     //param  (StockList) listToCompare     : StockList which has to comared for similarity index
@@ -27,9 +28,17 @@ namespace Assignment_2
     {
       int similarityIndex = 0;
 
-      // write your implementation here
+            // write your implementation here
+            StockList stocklist = new StockList();
 
-      return similarityIndex;
+            while (stocklist.head != null && listToCompare.head != null && stocklist.head.StockHolding == listToCompare.head.StockHolding)
+            {
+                stocklist.head = stocklist.head.Next;
+                listToCompare.head = listToCompare.head.Next;
+                similarityIndex++;
+            }
+
+            return similarityIndex;
     }
 
     //param        : NA
@@ -38,6 +47,9 @@ namespace Assignment_2
     //return type  : NA
     public void Print()
     {
+
+
+
             // write your implementation here
             StockNode current = head;
             while (current != null)
@@ -47,5 +59,7 @@ namespace Assignment_2
             }
 
         }
+
     }
-}
+
+  }
