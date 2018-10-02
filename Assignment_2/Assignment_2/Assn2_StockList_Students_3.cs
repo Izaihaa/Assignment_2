@@ -48,6 +48,8 @@ namespace Assignment_2
     public void Print()
     {
 
+
+
             // write your implementation here
             StockNode current = head;
             while (current != null)
@@ -57,5 +59,7 @@ namespace Assignment_2
             }
 
         }
+
+    }
+
   }
-}

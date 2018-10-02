@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Assignment_2
 {
@@ -219,27 +220,73 @@ namespace Assignment_2
       return currNodeTwo;
     }
 
-    
-    // FOR STUDENTS
 
-    //param        : NA
-    //summary      : Sort the list by descending number of holdings
-    //return       : NA
-    //return type  : NA
-    public void SortByValue()
-    {
-      // write your implementation here
+        // FOR STUDENTS
 
-    }
+        //param        : NA
+        //summary      : Sort the list by descending number of holdings
+        //return       : Sorted Stock List
+        //return type  : StockList
+        public void SortByValue()
+        {
 
-    //param        : NA
-    //summary      : Sort the list alphabatically
-    //return       : NA
-    //return type  : NA
-    public void SortByName()
-    {
-      // write your implementation here
 
-    }
+            // write your implementation here   
+
+            bool restartTest = true; //Test for stop the process
+            StockNode currentNode = head; //inherit data       
+
+            while (restartTest == true )// First Loop Level
+            {
+                restartTest = false;
+               
+                while (!restartTest && currentNode.Next != null) // Second Loop Level
+
+                {
+                    if (currentNode.Next.StockHolding.Holdings >= currentNode.StockHolding.Holdings) //is sorted
+                    {
+                        currentNode = currentNode.Next;
+                    }
+                    else
+                    {
+                        Swap(currentNode.StockHolding); //Call the Swap Method and Pass in the node
+                    }
+                }
+            }
+        }
+
+        //param        : NA
+        //summary      : Sort the list alphabatically
+        //return       : NA
+        //return type  : NA
+        public void SortByName()
+        {
+            // write your implementation here
+
+            bool restartTest = true; //Test for stop the process
+            StockNode currentNode = head; //inherit data       
+
+            while (restartTest == true)// First Loop Level
+            {
+                restartTest = false;
+
+                while (!restartTest && currentNode.Next != null) // Second Loop Level
+
+                {
+                    if (currentNode.Next.StockHolding.Name.CompareTo(currentNode.StockHolding.Name) <= 0) //is sorted
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Swap(currentNode.StockHolding); //Call the Swap Method and Pass in the node
+                    }
+                }
+            }
+
+
+
+
+        }
   }
 }
