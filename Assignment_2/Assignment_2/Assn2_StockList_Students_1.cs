@@ -246,16 +246,16 @@ namespace Assignment_2
                 {
                     if (currentNode.Next.StockHolding.Holdings >= currentNode.StockHolding.Holdings) //is sorted
                     {
-                        //Swap(currentNode.StockHolding);
+                      
                         currentNode = currentNode.Next;
-                       // return;
+                      
                     }
                     else
                     {
                         //Call the Swap Method and Pass in the node
-                        //currentNode = currentNode.Next;
+                        
                         Swap(currentNode.StockHolding);
-                        //return;
+                      
                     }
 
                    
