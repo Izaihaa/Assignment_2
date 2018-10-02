@@ -229,8 +229,66 @@ namespace Assignment_2
         //return type  : NA
         public void SortByValue()
         {
-            // write your implementation here          
 
+
+            // write your implementation here   
+
+            bool restartTest = true; //Test for stop the process
+            StockNode currentNode = head; //inherit data       
+
+
+            while (restartTest)
+            {
+                restartTest = false;
+                //currentNode = head;
+                while (!restartTest && currentNode.Next != null)
+
+                {
+                    if (currentNode.Next.StockHolding.Holdings <= currentNode.StockHolding.Holdings) //is sorted
+                    {
+                        currentNode = currentNode.Next;
+                        //return;
+                    }
+                    else
+                    {
+                        //swap the data
+                        Swap(currentNode.StockHolding);
+                        //return;
+                    }
+                }
+            }
+
+            /*
+            bool restartTest = true; //Test for stop the process
+            StockNode currentNode = head; //inherit data       
+             
+
+            while (restartTest)
+            {
+                restartTest = false;
+                currentNode = head;
+                while (!restartTest && currentNode.Next != null)
+
+                {
+                    if (currentNode.Next.StockHolding.Holdings <= currentNode.StockHolding.Holdings) //is sorted
+                    {
+                        currentNode = currentNode.Next;
+                        return;
+                    }
+                    else
+                    {
+                        //swap the data
+                        Swap(currentNode.StockHolding);
+                        return;
+                    }
+                }
+            }
+
+
+            */
+
+
+            /*
 
             bool restartTest = true; //Test for stop the process
             StockNode currentNode = head; //inherit data       
@@ -258,21 +316,24 @@ namespace Assignment_2
                     }
                 }
             }
-    
-                    /*
-                List<StockList> stockListsSorted1 = new List<StockList>();
-                stockListsSorted1.Add(this);
+            
+            */
 
-                List<StockList> sortedList =  stockListsSorted1.OrderByDescending(s => s.head.StockHolding.Holdings).ToList();
 
-                sortedList = sortedList.OrderByDescending(s => s.head.StockHolding).ToList();
+            /*
+        List<StockList> stockListsSorted1 = new List<StockList>();
+        stockListsSorted1.Add(this);
 
-                //Testing to see if using a locally declared list would help resolve
-                var stockListsSorted2 = stockListsSorted1.OrderBy(s => s.head).ToList();
+        List<StockList> sortedList =  stockListsSorted1.OrderByDescending(s => s.head.StockHolding.Holdings).ToList();
 
-                // Testing to see if sorting an array would work better
-                StockList[] arrayTest1 = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
-                */
+        sortedList = sortedList.OrderByDescending(s => s.head.StockHolding).ToList();
+
+        //Testing to see if using a locally declared list would help resolve
+        var stockListsSorted2 = stockListsSorted1.OrderBy(s => s.head).ToList();
+
+        // Testing to see if sorting an array would work better
+        StockList[] arrayTest1 = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
+        */
 
 
 
