@@ -225,8 +225,8 @@ namespace Assignment_2
 
         //param        : NA
         //summary      : Sort the list by descending number of holdings
-        //return       : NA
-        //return type  : NA
+        //return       : Sorted Stock List
+        //return type  : StockList
         public void SortByValue()
         {
 
@@ -236,73 +236,11 @@ namespace Assignment_2
             bool restartTest = true; //Test for stop the process
             StockNode currentNode = head; //inherit data       
 
-
-            while (restartTest == true )
+            while (restartTest == true )// First Loop Level
             {
                 restartTest = false;
                
-                while (!restartTest && currentNode.Next != null)
-
-                {
-                    if (currentNode.Next.StockHolding.Holdings >= currentNode.StockHolding.Holdings) //is sorted
-                    {
-                      
-                        currentNode = currentNode.Next;
-                      
-                    }
-                    else
-                    {
-                        //Call the Swap Method and Pass in the node
-                        
-                        Swap(currentNode.StockHolding);
-                      
-                    }
-
-                   
-                }
-            }
-
-            /*
-            bool restartTest = true; //Test for stop the process
-            StockNode currentNode = head; //inherit data       
-             
-
-            while (restartTest)
-            {
-                restartTest = false;
-                currentNode = head;
-                while (!restartTest && currentNode.Next != null)
-
-                {
-                    if (currentNode.Next.StockHolding.Holdings <= currentNode.StockHolding.Holdings) //is sorted
-                    {
-                        currentNode = currentNode.Next;
-                        return;
-                    }
-                    else
-                    {
-                        //swap the data
-                        Swap(currentNode.StockHolding);
-                        return;
-                    }
-                }
-            }
-
-
-            */
-
-
-            /*
-
-            bool restartTest = true; //Test for stop the process
-            StockNode currentNode = head; //inherit data       
-            decimal nextNode;
-
-            while (restartTest)
-            {
-                restartTest = false;
-                currentNode = head;
-                while (!restartTest && currentNode.Next != null)
+                while (!restartTest && currentNode.Next != null) // Second Loop Level
 
                 {
                     if (currentNode.Next.StockHolding.Holdings >= currentNode.StockHolding.Holdings) //is sorted
@@ -311,37 +249,10 @@ namespace Assignment_2
                     }
                     else
                     {
-                        //swap the data
-                        nextNode = currentNode.StockHolding.Holdings;
-                        currentNode.StockHolding.Holdings = currentNode.Next.StockHolding.Holdings;
-                        currentNode.Next.StockHolding.Holdings = nextNode;
-
-                        restartTest = true;
+                        Swap(currentNode.StockHolding); //Call the Swap Method and Pass in the node
                     }
                 }
             }
-            
-            */
-
-
-            /*
-        List<StockList> stockListsSorted1 = new List<StockList>();
-        stockListsSorted1.Add(this);
-
-        List<StockList> sortedList =  stockListsSorted1.OrderByDescending(s => s.head.StockHolding.Holdings).ToList();
-
-        sortedList = sortedList.OrderByDescending(s => s.head.StockHolding).ToList();
-
-        //Testing to see if using a locally declared list would help resolve
-        var stockListsSorted2 = stockListsSorted1.OrderBy(s => s.head).ToList();
-
-        // Testing to see if sorting an array would work better
-        StockList[] arrayTest1 = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
-        */
-
-
-
-
         }
 
         //param        : NA
@@ -351,6 +262,30 @@ namespace Assignment_2
         public void SortByName()
         {
             // write your implementation here
+
+            bool restartTest = true; //Test for stop the process
+            StockNode currentNode = head; //inherit data       
+
+            while (restartTest == true)// First Loop Level
+            {
+                restartTest = false;
+
+                while (!restartTest && currentNode.Next != null) // Second Loop Level
+
+                {
+                    if (currentNode.Next.StockHolding.Name.CompareTo(currentNode.StockHolding.Name) <= 0) //is sorted
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Swap(currentNode.StockHolding); //Call the Swap Method and Pass in the node
+                    }
+                }
+            }
+
+
+
 
         }
   }
