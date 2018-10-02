@@ -15,15 +15,16 @@ namespace Assignment_2
       decimal value = 0.0m;
 
             // write your implementation here
-            //Stock stock = new Stock();
+
+            //Create a temporary node for use in this method from the "Head" node.
             StockNode currentNode = head;
 
-            while (currentNode != null)
+            //Go through the nodes one by one to calculate the Value of each stock and add it to the previous value. 
+            //Do this until you reach the "Null" node (end of the list)
+            while (currentNode != null)//Go through the nodes one by one to calculate the Value of each stock and add it to the previous value. 
             {
                 value = (currentNode.StockHolding.Holdings * currentNode.StockHolding.CurrentPrice) + value;
-                currentNode = currentNode.Next;
-                //return value;
-                
+                currentNode = currentNode.Next; 
             }
             return value;
     }
