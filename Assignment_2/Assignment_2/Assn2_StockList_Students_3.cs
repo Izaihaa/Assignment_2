@@ -15,8 +15,16 @@ namespace Assignment_2
       decimal value = 0.0m;
 
             // write your implementation here
-            Stock stock = new Stock();
-            value = stock.Holdings * stock.CurrentPrice;
+            //Stock stock = new Stock();
+            StockNode currentNode = head;
+
+            while (currentNode != null)
+            {
+                value = (currentNode.StockHolding.Holdings * currentNode.StockHolding.CurrentPrice) + value;
+                currentNode = currentNode.Next;
+                //return value;
+                
+            }
             return value;
     }
 
