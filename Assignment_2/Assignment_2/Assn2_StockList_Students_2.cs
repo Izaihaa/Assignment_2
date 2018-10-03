@@ -12,10 +12,23 @@ namespace Assignment_2
     //return type  : StockList
     public StockList MergeList(StockList listToMerge)
     {
+      //Already a part of the method
       StockList resultList = new StockList();
+            resultList = this;
+            
 
-      // write your implementation here
+            // write your implementation here
+            
+            StockNode  currentNode = head;
 
+            while (currentNode != null & listToMerge.head != null)
+            {
+                resultList.AddStock(listToMerge.head.StockHolding);
+                listToMerge.head = listToMerge.head.Next; 
+                currentNode = currentNode.Next;
+            }
+            
+      //Already a part of the method  
       return resultList;
     }
 
@@ -25,11 +38,33 @@ namespace Assignment_2
     //return type  : Stock
     public Stock MostShares()
     {
-      Stock mostShareStock = null;
+            Stock mostShareStock = null;
 
-      // write your implementation here
+            // write your implementation here
 
-      return mostShareStock;
+            //Set local variable "currentNode" Equal to FirstNode in the Stock List
+            StockNode currentNode = head;
+
+            //Set local variable "mostShareStock" equal to the current node as a starting value
+            mostShareStock = currentNode.StockHolding;
+
+           //Traverse the nodes in the list until we reach the end
+            while (currentNode.Next != null)
+            {
+                //Check if holdings of mostShareStock is less than the next node in the list
+                if (mostShareStock.Holdings < currentNode.Next.StockHolding.Holdings)
+                {
+                    //If it is less than the next node, the mostShareStock now becomes the next stock
+                    currentNode = currentNode.Next;
+                    mostShareStock = currentNode.StockHolding;
+                }
+
+                //Continue to advance down the list
+                else currentNode = currentNode.Next;
+ 
+            }
+
+            return mostShareStock;
     }
 
     //param        : NA
@@ -40,9 +75,17 @@ namespace Assignment_2
     {
       int length = 0;
 
-      // write your implementation here
+            // write your implementation here
 
-      return length;
+            var current = this.head;
+            while (current != null)
+            {
+                length++;
+                current = current.Next;
+            }
+
+
+            return length;
     }
   }
 }
