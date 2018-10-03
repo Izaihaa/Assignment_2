@@ -25,11 +25,42 @@ namespace Assignment_2
     //return type  : Stock
     public Stock MostShares()
     {
-      Stock mostShareStock = null;
+      //Stock mostShareStock = null;
 
-      // write your implementation here
+            // write your implementation here
 
-      return mostShareStock;
+            /*
+            StockNode current = this.head;
+            StockNode previous = this.head;
+            Stock currentStock = current.StockHolding;
+            mostShareStock = currentStock;
+            while (current != null)
+            {
+                if (currentStock.Holdings > mostShareStock.Holdings)
+                {
+                    mostShareStock = currentStock;
+                }
+                previous = current;
+                current = current.Next;
+            }
+            */
+
+            StockNode current = head;
+            //StockNode previous = this.head;
+            //Stock currentStock = current.StockHolding;
+            //mostShareStock = currentStock;
+            while (current.Next != null)
+            {
+                if (current.StockHolding.Holdings < current.Next.StockHolding.Holdings)
+                {
+                    current = current.Next;
+    
+                }
+ 
+            }
+
+            return current.StockHolding;
+            //return mostShareStock;
     }
 
     //param        : NA
