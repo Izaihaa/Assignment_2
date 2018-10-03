@@ -12,10 +12,36 @@ namespace Assignment_2
     //return type  : StockList
     public StockList MergeList(StockList listToMerge)
     {
+      //Already a part of the method
       StockList resultList = new StockList();
 
-      // write your implementation here
+            // write your implementation here
+            /*
+            StockNode  currentNode = head;
+            StockNode secondNodeofList1 = head.Next;
 
+            while (currentNode.Next != null & listToMerge.head.Next != null)
+            {
+                AddStock(listToMerge.head.StockHolding);
+                listToMerge.head = listToMerge.head.Next; 
+                currentNode = currentNode.Next;
+            }
+            */
+            /*
+            StockNode current = this.head;
+            StockNode previous = this.head;
+            while (current != null)
+            {
+                Stock currentStock = current.StockHolding;
+                resultList.AddStock(currentStock);
+                previous = current;
+                current = current.Next;
+            }
+            */
+
+
+
+      //Already a part of the method  
       return resultList;
     }
 
