@@ -92,9 +92,17 @@ namespace Assignment_2
     {
       int length = 0;
 
-      // write your implementation here
+            // write your implementation here
 
-      return length;
+            var current = this.head;
+            while (current != null)
+            {
+                length++;
+                current = current.Next;
+            }
+
+
+            return length;
     }
   }
 }
