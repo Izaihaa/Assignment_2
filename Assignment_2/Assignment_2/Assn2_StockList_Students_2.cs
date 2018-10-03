@@ -14,19 +14,23 @@ namespace Assignment_2
     {
       //Already a part of the method
       StockList resultList = new StockList();
+            resultList = this;
+            
 
             // write your implementation here
-            /*
+            
             StockNode  currentNode = head;
-            StockNode secondNodeofList1 = head.Next;
+            //StockNode secondNodeofList1 = head.Next;
 
-            while (currentNode.Next != null & listToMerge.head.Next != null)
+            while (currentNode != null & listToMerge.head != null)
             {
-                AddStock(listToMerge.head.StockHolding);
+                resultList.AddStock(listToMerge.head.StockHolding);
                 listToMerge.head = listToMerge.head.Next; 
                 currentNode = currentNode.Next;
             }
-            */
+            
+
+
             /*
             StockNode current = this.head;
             StockNode previous = this.head;
