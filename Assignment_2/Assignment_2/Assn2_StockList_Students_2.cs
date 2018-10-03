@@ -67,7 +67,7 @@ namespace Assignment_2
 
             // write your implementation here
 
-
+            /*
             StockNode current = this.head;
             StockNode previous = this.head;
             Stock currentStock = current.StockHolding;
@@ -81,8 +81,9 @@ namespace Assignment_2
                 previous = current;
                 current = current.Next;
             }
-
+            */
             return length;
+
     }
   }
 }
