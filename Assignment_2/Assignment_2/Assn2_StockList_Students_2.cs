@@ -20,7 +20,6 @@ namespace Assignment_2
             // write your implementation here
             
             StockNode  currentNode = head;
-            //StockNode secondNodeofList1 = head.Next;
 
             while (currentNode != null & listToMerge.head != null)
             {
@@ -29,22 +28,6 @@ namespace Assignment_2
                 currentNode = currentNode.Next;
             }
             
-
-
-            /*
-            StockNode current = this.head;
-            StockNode previous = this.head;
-            while (current != null)
-            {
-                Stock currentStock = current.StockHolding;
-                resultList.AddStock(currentStock);
-                previous = current;
-                current = current.Next;
-            }
-            */
-
-
-
       //Already a part of the method  
       return resultList;
     }
