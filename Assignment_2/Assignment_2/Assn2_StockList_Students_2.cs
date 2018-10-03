@@ -25,42 +25,33 @@ namespace Assignment_2
     //return type  : Stock
     public Stock MostShares()
     {
-      //Stock mostShareStock = null;
+            Stock mostShareStock = null;
 
             // write your implementation here
 
-            /*
-            StockNode current = this.head;
-            StockNode previous = this.head;
-            Stock currentStock = current.StockHolding;
-            mostShareStock = currentStock;
-            while (current != null)
-            {
-                if (currentStock.Holdings > mostShareStock.Holdings)
-                {
-                    mostShareStock = currentStock;
-                }
-                previous = current;
-                current = current.Next;
-            }
-            */
+            //Set local variable "currentNode" Equal to FirstNode in the Stock List
+            StockNode currentNode = head;
 
-            StockNode current = head;
-            //StockNode previous = this.head;
-            //Stock currentStock = current.StockHolding;
-            //mostShareStock = currentStock;
-            while (current.Next != null)
+            //Set local variable "mostShareStock" equal to the current node as a starting value
+            mostShareStock = currentNode.StockHolding;
+
+           //Traverse the nodes in the list until we reach the end
+            while (currentNode.Next != null)
             {
-                if (current.StockHolding.Holdings < current.Next.StockHolding.Holdings)
+                //Check if holdings of mostShareStock is less than the next node in the list
+                if (mostShareStock.Holdings < currentNode.Next.StockHolding.Holdings)
                 {
-                    current = current.Next;
-    
+                    //If it is less than the next node, the mostShareStock now becomes the next stock
+                    currentNode = currentNode.Next;
+                    mostShareStock = currentNode.StockHolding;
                 }
+
+                //Continue to advance down the list
+                else currentNode = currentNode.Next;
  
             }
 
-            return current.StockHolding;
-            //return mostShareStock;
+            return mostShareStock;
     }
 
     //param        : NA
