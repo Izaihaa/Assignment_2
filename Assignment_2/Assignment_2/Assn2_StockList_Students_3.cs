@@ -38,15 +38,29 @@ namespace Assignment_2
       int similarityIndex = 0;
 
             // write your implementation here
-            StockList stocklist = new StockList();
-
-            while (stocklist.head != null && listToCompare.head != null && stocklist.head.StockHolding == listToCompare.head.StockHolding)
+            StockList tempStockList = new StockList();
+            //tempStockList = this;
+            
+            while (tempStockList.head != null && listToCompare.head != null)
             {
-                stocklist.head = stocklist.head.Next;
+                
+                if (tempStockList.head.StockHolding.Symbol == listToCompare.head.StockHolding.Symbol)
+                {
+                   // listToCompare.head = listToCompare.head.Next;
+                    similarityIndex++;
+                }
+
+                
+                
+
+
+                tempStockList.head = tempStockList.head.Next;
                 listToCompare.head = listToCompare.head.Next;
                 similarityIndex++;
-            }
 
+    
+            }
+          
             return similarityIndex;
     }
 
