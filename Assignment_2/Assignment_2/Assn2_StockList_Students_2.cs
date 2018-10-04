@@ -14,6 +14,7 @@ namespace Assignment_2
     {
       //Already a part of the method
       StockList resultList = new StockList();
+            
             resultList = this;
             
 
